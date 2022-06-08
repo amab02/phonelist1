@@ -46,15 +46,15 @@ def save_phonelist(C):
     cur.close()
 
 while True: ## REPL - Read Execute Program Loop
-    cmd = input("Command: ")
+    cmd = input("Command: ").strip().upper()
     if cmd == "LIST":
         print(read_phonelist(conn))
     elif cmd == "ADD":
-        name = input("  Name: ")
-        phone = input("  Phone: ")
+        name = input("  Name: ").strip().title()
+        phone = input("  Phone: ").strip()
         add_phone(conn, name, phone)
     elif cmd == "DELETE":
-        name = input("  Name: ")
+        name = input("  Name: ").strip().title()
         delete_phone(conn, name)
     elif cmd == "REMOVE":
         print("Unknown command: REMOVE")
