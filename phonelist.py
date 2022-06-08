@@ -9,6 +9,19 @@ conn = psycopg2.connect(
     password="Bl0mm0r!")
 
 
+the_list = []
+print("-----Hello and welcome to the phonelist! Available commands:-----")
+
+commands = [
+    'ADD: Add a name to the list',
+    'LIST: Print the list of names',
+    'DELETE: Delete a name from the list',
+    'QUIT: End the program']
+for x in commands:
+    print(x)
+
+
+
 def read_phonelist(C):
     cur = C.cursor()
     cur.execute("SELECT * FROM phonelist;")
