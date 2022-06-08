@@ -16,7 +16,9 @@ commands = [
     'ADD: Add a name to the list',
     'LIST: Print the list of names',
     'DELETE: Delete a name from the list',
-    'QUIT: End the program']
+    'QUIT: End the program',
+    'SAVE: Saves the data',
+    'HELP: This message will come up again' ]
 for x in commands:
     print(x)
 
@@ -58,6 +60,11 @@ while True: ## REPL - Read Execute Program Loop
         delete_phone(conn, name)
     elif cmd == "REMOVE":
         print("Unknown command: REMOVE")
+    elif cmd == "HELP":
+        print(commands)
+    elif cmd == "SAVE":
+        save_phonelist(conn)
+        print('SAVED')
     elif cmd == "QUIT":
         save_phonelist(conn)
         exit()
